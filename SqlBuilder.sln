@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ANSqlBuilder", "ANSqlBuilder\ANSqlBuilder.csproj", "{F730F56F-A4EC-4DC1-B025-6C448F2DBF89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ANCommon", "ANCommon\ANCommon.csproj", "{726AE1D7-1714-44B0-BA85-61967E47EDED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F730F56F-A4EC-4DC1-B025-6C448F2DBF89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F730F56F-A4EC-4DC1-B025-6C448F2DBF89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F730F56F-A4EC-4DC1-B025-6C448F2DBF89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F730F56F-A4EC-4DC1-B025-6C448F2DBF89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{726AE1D7-1714-44B0-BA85-61967E47EDED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{726AE1D7-1714-44B0-BA85-61967E47EDED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{726AE1D7-1714-44B0-BA85-61967E47EDED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{726AE1D7-1714-44B0-BA85-61967E47EDED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {510F3A4E-4C38-469F-91D4-B583DAB4FFA3}
+	EndGlobalSection
+EndGlobal
