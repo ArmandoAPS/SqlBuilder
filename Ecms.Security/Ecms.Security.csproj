@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDDBBFA8-3ECD-43AF-A898-2433DB618660}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ecms.Security</RootNamespace>
+    <AssemblyName>Ecms.Security</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\Services\ComponentService.cs" />
+    <Compile Include="Application\Services\IComponentService.cs" />
+    <Compile Include="Application\Services\IMenuService.cs" />
+    <Compile Include="Application\Services\IModuleService.cs" />
+    <Compile Include="Application\Services\ISolutionService.cs" />
+    <Compile Include="Application\Services\LogService.cs" />
+    <Compile Include="Application\Services\MenuService.cs" />
+    <Compile Include="Application\Services\ModuleService.cs" />
+    <Compile Include="Application\Services\RoleService.cs" />
+    <Compile Include="Application\Services\SolutionService.cs" />
+    <Compile Include="Application\Services\UserService.cs" />
+    <Compile Include="Domain\Model\Component.cs" />
+    <Compile Include="Domain\Model\Log.cs" />
+    <Compile Include="Domain\Model\Menu.cs" />
+    <Compile Include="Domain\Model\Module.cs" />
+    <Compile Include="Domain\Model\Role.cs" />
+    <Compile Include="Domain\Model\Solution.cs" />
+    <Compile Include="Domain\Model\User.cs" />
+    <Compile Include="Infrastructure\DataSetAdapters\ComponentDataSetAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\DataSetAdapters\LogDataSetAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\DataSetAdapters\MenuDataSetAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\DataSetAdapters\ModuleDataSetAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\DataSetAdapters\RoleDataSetAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\DataSetAdapters\SolutionDataSetAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\DataSetAdapters\UserDataSetAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\Mappings\ComponentMapping.cs" />
+    <Compile Include="Infrastructure\Mappings\LogMapping.cs" />
+    <Compile Include="Infrastructure\Mappings\MenuMapping.cs" />
+    <Compile Include="Infrastructure\Mappings\ModuleMapping.cs" />
+    <Compile Include="Infrastructure\Mappings\RoleMapping.cs" />
+    <Compile Include="Infrastructure\Mappings\SolutionMapping.cs" />
+    <Compile Include="Infrastructure\Mappings\UserMapping.cs" />
+    <Compile Include="Infrastructure\Repositories\ComponentRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\LogRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\MenuRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\ModuleRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\RoleRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\SolutionRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\UserRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ANCommon\ANCommon.csproj">
+      <Project>{726ae1d7-1714-44b0-ba85-61967e47eded}</Project>
+      <Name>ANCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ANMappings\ANMappings.csproj">
+      <Project>{7b4b855d-45c2-4d99-90ff-811299181f2b}</Project>
+      <Name>ANMappings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ANSqlBuilder\ANSqlBuilder.csproj">
+      <Project>{f730f56f-a4ec-4dc1-b025-6c448f2dbf89}</Project>
+      <Name>ANSqlBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ecms.Core\Ecms.Core.csproj">
+      <Project>{f91a002b-aa25-4a9f-91bc-aab3e7fe87ee}</Project>
+      <Name>Ecms.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

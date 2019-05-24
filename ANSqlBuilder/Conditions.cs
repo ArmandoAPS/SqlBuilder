@@ -10,7 +10,7 @@ namespace ANSqlBuilder
     {
         protected ConditionType _ConditionType;
         protected bool _Negation;
-        protected List<ICondition> _ConditionList ;
+        protected List<ICondition> _ConditionList;
 
         #region Constructor
         public Conditions()
@@ -43,8 +43,8 @@ namespace ANSqlBuilder
         {
         }
 
-        public Conditions(string left_operand, Comparisons comparison, string right_operand,bool negation) :
-            this(new SqlColumnName(left_operand),comparison,new SqlColumnName(right_operand),negation)
+        public Conditions(string left_operand, Comparisons comparison, string right_operand, bool negation) :
+            this(new SqlColumnName(left_operand), comparison, new SqlColumnName(right_operand), negation)
         {
         }
 
@@ -216,13 +216,13 @@ namespace ANSqlBuilder
                     else if (_ConditionList[x].ConditionType == ConditionType.Or)
                         sql.Append(" OR ");
                 }
-                _ConditionList[x].GetSql(db_target,ref sql);
+                _ConditionList[x].GetSql(db_target, ref sql);
             }
             sql.Append(")");
-         }
+        }
 
         #region Statics Methods
-        
+
         // IsEqual Operator
 
         public static Conditions IsEqual(ISqlExpression a, ISqlExpression b)
@@ -424,7 +424,7 @@ namespace ANSqlBuilder
         {
             return Between(new SqlColumnName(a), new SqlColumnName(b));
         }
-        
+
         #endregion
 
     }

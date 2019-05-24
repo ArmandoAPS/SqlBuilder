@@ -214,7 +214,7 @@ namespace ANSqlBuilder
 
         public static Condition IsLike(string a, string b)
         {
-            return new Condition(new SqlColumnName(a),Comparisons.Like, new SqlString(b));
+            return new Condition(new SqlColumnName(a), Comparisons.Like, new SqlString(b));
         }
 
         // In Operator
@@ -241,7 +241,7 @@ namespace ANSqlBuilder
         public static Condition IsIn(string a, int[] items)
         {
             var sb = new StringBuilder();
-            for (var x = 0; x < items.Length; x++ )
+            for (var x = 0; x < items.Length; x++)
             {
                 if (x > 0)
                     sb.Append(", ");
@@ -282,7 +282,7 @@ namespace ANSqlBuilder
         // Between Operator
         public static Condition Between(ISqlExpression a, ISqlExpression b, ISqlExpression c)
         {
-            return new Condition(a, Comparisons.Between, new AndExpression(b,c));
+            return new Condition(a, Comparisons.Between, new AndExpression(b, c));
         }
 
         public static Condition Between(ISqlExpression a, string b, string c)
@@ -290,7 +290,7 @@ namespace ANSqlBuilder
             return Between(a, new SqlColumnName(b), new SqlColumnName(c));
         }
 
-        public static Condition Between(string a, ISqlExpression b,ISqlExpression c)
+        public static Condition Between(string a, ISqlExpression b, ISqlExpression c)
         {
             return Between(new SqlColumnName(a), b, c);
         }
@@ -361,7 +361,7 @@ namespace ANSqlBuilder
             }
 
             else
-            {                        
+            {
 
                 switch (_Comparison)
                 {
@@ -395,7 +395,7 @@ namespace ANSqlBuilder
 
                     case Comparisons.Between:
                         sql.Append(" BETWEEN ");
-                        
+
                         break;
                 }
                 if (!RightOperand.IsLiteral)
@@ -403,7 +403,7 @@ namespace ANSqlBuilder
                 RightOperand.GetSql(db_target, ref sql);
                 if (!RightOperand.IsLiteral)
                     sql.Append(")");
-                
+
             }
             sql.Append(")");
         }
